@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
+import { FetchSanitizer } from '@/components/FetchSanitizer'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <body className={`${inter.className} h-full antialiased`}>
+        <FetchSanitizer />
         {children}
         <Toaster richColors position="top-center" />
       </body>
